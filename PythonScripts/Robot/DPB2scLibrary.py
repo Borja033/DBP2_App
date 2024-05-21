@@ -793,7 +793,7 @@ class DPB2scLibrary(object):
 
         except Exception as e:
             print(f"Failed to execute command {e}")
-            return 0
+            raise AssertionError('Failed to run IIO Event Monitor')
         
 if __name__ == '__main__':
     RobotRemoteServer(DPB2scLibrary(), *sys.argv[1:])
